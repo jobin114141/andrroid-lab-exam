@@ -1,0 +1,58 @@
+main activity 
+package com.example.myapplication;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.Toast;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        Toast.makeText(getApplicationContext(),item.getTitle(), Toast.LENGTH_SHORT).show();
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+
+
+    }
+}
+
+menu
+
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:icon="@android:drawable/ic_dialog_email"
+        android:title="open"></item>
+    <item
+        android:icon="@android:drawable/ic_menu_share"
+        android:title="share"
+        android:visible="true"></item>
+    <item
+        android:icon="@android:drawable/ic_delete"
+        android:title="delete"></item>
+    <item
+        android:icon="@android:drawable/ic_menu_search"
+        android:title="search"></item>
+    <item
+        android:icon="@android:drawable/ic_menu_manage"
+        android:title="settings"></item>
+
+</menu>
